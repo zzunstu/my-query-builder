@@ -1,0 +1,41 @@
+<h2>Vanilla</h2>
+<input type="button" value="Show Query" (click)="showQuery()"/>
+<input type="button" value="Show Selected ID" (click)="showSelected()"/>
+<br/>
+<br/>
+
+<select (change)="onChange($event)">
+    <option *ngFor="let field of myOptions" [value]="field.value">
+        {{ field.name }}
+     </option>
+</select>
+
+<br/>
+<br/>
+<query-builder [formControl]='queryCtrl' [config]='config'>
+  <ng-container *queryInput="let rule; type: 'textarea'; let getDisabledState=getDisabledState">
+    <textarea class="text-input text-area" [(ngModel)]="rule.value" [disabled]=getDisabledState()
+      placeholder="Custom Textarea"></textarea>
+  </ng-container>
+  <ng-container *queryButtonGroup="let ruleset; let addRule=addRule; let addRuleSet=addRuleSet; let removeRuleSet=removeRuleSet">
+    <!-- <button (click)="addRule()">+ Rule</button> -->
+    <button (click)="addRuleSet()">+ Ruleset</button>
+    <button (click)="removeRuleSet()">- Ruleset</button>
+    <button (click)="promote(ruleset)">Promote</button>
+    <input type="radio" name="colors" (change)="oncheck($event, ruleset.id)"/>
+  </ng-container>
+  <ng-container *queryRemoveButton="let rule; let removeRule=removeRule">
+    <button (click)="removeRule(rule)">- Rule</button>
+    <button (click)="depromote(rule)">Demote</button>
+  </ng-container>
+  <ng-container *queryField="let rule; let fields=fields; let onChange=onChange; let getFields = getFields">
+    <span>{{ rule.field }}</span>
+        <!-- <button type="button">Select Field</button>
+        <select [(ngModel)]="rule.field" (ngModelChange)="onChange($event, rule)">
+            <option *ngFor="let field of getFields(rule.entity)" [value]="field.value">
+                {{ field.name }}
+             </option>
+        </select> -->
+  </ng-container>
+ </query-builder>
+

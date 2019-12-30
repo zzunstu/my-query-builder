@@ -1,0 +1,6007 @@
+{
+    "Name": "Portfolio",
+    "DisplayName": "Portfolio",
+    "RestrictionClassID": 76,
+    "Fields": [
+        {
+            "Name": "ReconRuleID",
+            "FieldID": -202106,
+            "Caption": "Reconciliation Rule",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "ReconRuleID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "0",
+                    "Display": ""
+                }
+            ],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "ReconciliationCloseDate",
+            "FieldID": -202051,
+            "Caption": "Reconciliation Close Date",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Date",
+            "UIType": "Date",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MinValue",
+                    "Value": "01021753",
+                    "SpecialErrorMessage": null
+                },
+                {
+                    "Type": "MaxValue",
+                    "Value": "12319999",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "ReconRuleName",
+            "FieldID": -202107,
+            "Caption": "Reconciliation Rule Name",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "Hyperlink",
+            "PrimaryKey": false,
+            "LinkTarget": "ReconRuleDetail.aspx?linkfield={0}",
+            "LinkFields": [
+                "ReconRuleID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "ReinvestDividends",
+            "FieldID": -202031,
+            "Caption": "Reinvest Dividends",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7039,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "BooleanWithBlank",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "-1",
+                    "Display": "(Use Settings)"
+                },
+                {
+                    "Data": "1",
+                    "Display": "Always Reinvest"
+                },
+                {
+                    "Data": "0",
+                    "Display": "Never Reinvest"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "1",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "ReinvestCapitalGains",
+            "FieldID": -202032,
+            "Caption": "Reinvest Capital Gains",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7039,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "BooleanWithBlank",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "-1",
+                    "Display": "(Use Settings)"
+                },
+                {
+                    "Data": "1",
+                    "Display": "Always Reinvest"
+                },
+                {
+                    "Data": "0",
+                    "Display": "Never Reinvest"
+                }
+            ],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "RealizedYTDGain",
+            "FieldID": -202083,
+            "Caption": "Realized YTD Gain",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "ProcessingGroupName",
+            "FieldID": -202088,
+            "Caption": "Processed By",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7046,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "ProcessingGroupID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "RealizedYTDGainInGlobalCurrency",
+            "FieldID": -202716,
+            "Caption": "Realized YTD Gain",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "RealizedYTDGainLongInGlobalCurrency",
+            "FieldID": -202717,
+            "Caption": "Realized YTD Gain Long",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "RealizedYTDGainLong",
+            "FieldID": -202084,
+            "Caption": "Realized YTD Gain Long",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "ShortName",
+            "FieldID": -202003,
+            "Caption": "Short Name",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "RexStartDate",
+            "FieldID": -202098,
+            "Caption": "Rex Start Date",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Date",
+            "UIType": "Date",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MinValue",
+                    "Value": "01021753",
+                    "SpecialErrorMessage": null
+                },
+                {
+                    "Type": "MaxValue",
+                    "Value": "12319999",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "ShortTaxRate",
+            "FieldID": -202732,
+            "Caption": "Short-term Tax Rate",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7427,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "NegativePercent",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "ShowFootNotes",
+            "FieldID": -202046,
+            "Caption": "Footnotes",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7040,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "BooleanWithBlank",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [
+                {
+                    "Data": "-1",
+                    "Display": "(Use Settings)"
+                },
+                {
+                    "Data": "1",
+                    "Display": "Show"
+                },
+                {
+                    "Data": "0",
+                    "Display": "Hide"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "1",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "ShowAddPortfolioToSyncConfirm",
+            "FieldID": -202740,
+            "Caption": "",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7488,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Boolean",
+            "UIType": "None",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "ReportHeading1",
+            "FieldID": -202004,
+            "Caption": "Report Heading 1",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "ReportHeading",
+            "FieldID": -202007,
+            "Caption": "Report Heading",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "MultiLineText",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "255",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "ReportHeading2",
+            "FieldID": -202005,
+            "Caption": "Report Heading 2",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "ReportHeadingDetail",
+            "FieldID": -202090,
+            "Caption": "Report Heading Detail",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "255",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "ReportHeading3",
+            "FieldID": -202006,
+            "Caption": "Report Heading 3",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "PriceSetID",
+            "FieldID": -202099,
+            "Caption": "Price Set",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7040,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [
+                {
+                    "Data": "0",
+                    "Display": "(Use Settings)"
+                },
+                {
+                    "Data": "1",
+                    "Display": "Standard Prices"
+                }
+            ],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "PriceSetCode",
+            "FieldID": -202100,
+            "Caption": "Price Set Code",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7040,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "PrimaryContactAddressID",
+            "FieldID": -202708,
+            "Caption": "Primary Contact Address ID",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "PrimaryContactCode",
+            "FieldID": -202702,
+            "Caption": "Primary Contact Code",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PrimaryContactID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "32",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "PrimaryContactAddressLabel",
+            "FieldID": -202709,
+            "Caption": "Primary Contact Address Label",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PrimaryContactAddressID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "Business",
+                    "Display": "Business"
+                },
+                {
+                    "Data": "Home",
+                    "Display": "Home"
+                },
+                {
+                    "Data": "Vacation Home",
+                    "Display": "Vacation Home"
+                },
+                {
+                    "Data": "Summer Home",
+                    "Display": "Summer Home"
+                },
+                {
+                    "Data": "Winter Home",
+                    "Display": "Winter Home"
+                },
+                {
+                    "Data": "Business 2",
+                    "Display": "Business 2"
+                },
+                {
+                    "Data": "Home 2",
+                    "Display": "Home 2"
+                },
+                {
+                    "Data": "Other",
+                    "Display": "Other"
+                },
+                {
+                    "Data": "Sig. Other",
+                    "Display": "Sig. Other"
+                },
+                {
+                    "Data": "None",
+                    "Display": "None"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "16",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "PortfolioGUID",
+            "FieldID": -202102,
+            "Caption": "Portfolio GUID",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "UniqueIdentifier",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "PortfolioCode",
+            "FieldID": -202002,
+            "Caption": "Portfolio Code",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": true,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "Hyperlink",
+            "PrimaryKey": false,
+            "LinkTarget": "PortfolioDetail.aspx?linkfield={0}",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "Required",
+                    "Value": "true",
+                    "SpecialErrorMessage": null
+                },
+                {
+                    "Type": "MaxLength",
+                    "Value": "30",
+                    "SpecialErrorMessage": null
+                },
+                {
+                    "Type": "RegularExpression",
+                    "Value": "^[\\p{Lu}\\p{Ll}\\p{Lo}\\p{Nd}\\p{Mn}\\p{Mc}][\\p{Lu}\\p{Ll}\\p{Lo}\\p{Nd}\\p{Mn}\\p{Mc}_\\-]*$",
+                    "SpecialErrorMessage": ": it can only contain letters, numbers, and underscores ('_') and hyphens ('-') that are not the first character"
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "PortfolioID",
+            "FieldID": -202001,
+            "Caption": "Portfolio ID",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "None",
+            "PrimaryKey": true,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "PortfolioTypeCode",
+            "FieldID": -202018,
+            "Caption": "Portfolio Type",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "",
+                    "Display": ""
+                },
+                {
+                    "Data": "Individual",
+                    "Display": "Individual"
+                },
+                {
+                    "Data": "Joint",
+                    "Display": "Joint"
+                },
+                {
+                    "Data": "UGMA",
+                    "Display": "UGMA"
+                },
+                {
+                    "Data": "Trust",
+                    "Display": "Trust"
+                },
+                {
+                    "Data": "401K",
+                    "Display": "401K"
+                },
+                {
+                    "Data": "Pension (Def. Ben.)",
+                    "Display": "Pension (Def. Ben.)"
+                },
+                {
+                    "Data": "Pension (Def. Con.)",
+                    "Display": "Pension (Def. Con.)"
+                },
+                {
+                    "Data": "Taft Hartley",
+                    "Display": "Taft Hartley"
+                },
+                {
+                    "Data": "IRA",
+                    "Display": "IRA"
+                },
+                {
+                    "Data": "Money  Purchase PSP",
+                    "Display": "Money  Purchase PSP"
+                },
+                {
+                    "Data": "Money Purchase PP",
+                    "Display": "Money Purchase PP"
+                },
+                {
+                    "Data": "Roth IRA",
+                    "Display": "Roth IRA"
+                },
+                {
+                    "Data": "Charitable",
+                    "Display": "Charitable"
+                },
+                {
+                    "Data": "Keogh",
+                    "Display": "Keogh"
+                },
+                {
+                    "Data": "Partnership",
+                    "Display": "Partnership"
+                },
+                {
+                    "Data": "Institutional",
+                    "Display": "Institutional"
+                },
+                {
+                    "Data": "Corporate",
+                    "Display": "Corporate"
+                },
+                {
+                    "Data": "ERISA",
+                    "Display": "ERISA"
+                },
+                {
+                    "Data": "WRAP",
+                    "Display": "WRAP"
+                },
+                {
+                    "Data": "DVP",
+                    "Display": "DVP"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "PortfolioStatus",
+            "FieldID": -202015,
+            "Caption": "Portfolio Status",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "",
+                    "Display": ""
+                },
+                {
+                    "Data": "Open",
+                    "Display": "Open"
+                },
+                {
+                    "Data": "Closed",
+                    "Display": "Closed"
+                },
+                {
+                    "Data": "Prospect",
+                    "Display": "Prospect"
+                },
+                {
+                    "Data": "Model",
+                    "Display": "Model"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "PrimaryContactPhoneLabel",
+            "FieldID": -202711,
+            "Caption": "Primary Contact Phone Label",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PrimaryContactPhoneID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "Business",
+                    "Display": "Business"
+                },
+                {
+                    "Data": "Business 2",
+                    "Display": "Business 2"
+                },
+                {
+                    "Data": "Home",
+                    "Display": "Home"
+                },
+                {
+                    "Data": "Home 2",
+                    "Display": "Home 2"
+                },
+                {
+                    "Data": "Pager",
+                    "Display": "Pager"
+                },
+                {
+                    "Data": "Cellular",
+                    "Display": "Cellular"
+                },
+                {
+                    "Data": "Business Fax",
+                    "Display": "Business Fax"
+                },
+                {
+                    "Data": "Home Fax",
+                    "Display": "Home Fax"
+                },
+                {
+                    "Data": "Car",
+                    "Display": "Car"
+                },
+                {
+                    "Data": "Other",
+                    "Display": "Other"
+                },
+                {
+                    "Data": "Other Fax",
+                    "Display": "Other Fax"
+                },
+                {
+                    "Data": "Sig. Other Home",
+                    "Display": "Sig. Other Home"
+                },
+                {
+                    "Data": "Sig. Other Business",
+                    "Display": "Sig. Other Business"
+                },
+                {
+                    "Data": "Sig. Other Fax",
+                    "Display": "Sig. Other Fax"
+                },
+                {
+                    "Data": "Assistant",
+                    "Display": "Assistant"
+                },
+                {
+                    "Data": "TTY/TDD",
+                    "Display": "TTY/TDD"
+                },
+                {
+                    "Data": "Summer Home",
+                    "Display": "Summer Home"
+                },
+                {
+                    "Data": "Vacation Home",
+                    "Display": "Vacation Home"
+                },
+                {
+                    "Data": "Winter Home",
+                    "Display": "Winter Home"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "16",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "PrimaryContactPhoneID",
+            "FieldID": -202710,
+            "Caption": "Primary Contact Phone ID",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "PrimaryContactType",
+            "FieldID": -202704,
+            "Caption": "Primary Contact",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "ProcessingGroupID",
+            "FieldID": -202039,
+            "Caption": "Processed By",
+            "DefaultValue": "-14",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7046,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "None",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "ProcessingGroupID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "ProcessingGroupCode",
+            "FieldID": -202712,
+            "Caption": "Processing Group Code",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7046,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "ProcessingGroupID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "PrimaryContactEmail2",
+            "FieldID": -202706,
+            "Caption": "Primary Contact Email 2",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "PrimaryContactEmail1",
+            "FieldID": -202705,
+            "Caption": "Primary Contact Email",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "PrimaryContactEmail3",
+            "FieldID": -202707,
+            "Caption": "Primary Contact Email 3",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "PrimaryContactName",
+            "FieldID": -202703,
+            "Caption": "Primary Contact",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "Hyperlink",
+            "PrimaryKey": false,
+            "LinkTarget": "ContactDetail.aspx?linkfield={0}",
+            "LinkFields": [
+                "PrimaryContactID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "255",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "PrimaryContactID",
+            "FieldID": -202701,
+            "Caption": "Primary Contact",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "LookupWidget",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PrimaryContactID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "10",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "ShowSecuritySymbol",
+            "FieldID": -202104,
+            "Caption": "Security Symbol",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7040,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [
+                {
+                    "Data": "",
+                    "Display": "(Use Settings)"
+                },
+                {
+                    "Data": "y",
+                    "Display": "Show (12 characters)"
+                },
+                {
+                    "Data": "l",
+                    "Display": "Show (25 characters)"
+                },
+                {
+                    "Data": "n",
+                    "Display": "Hide"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "1",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "TLIFailureRunNumber",
+            "FieldID": -202721,
+            "Caption": "TLI Failure Run Number",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": 0,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TLIFailureJobID",
+            "FieldID": -202720,
+            "Caption": "TLI Failure Job ID",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": 0,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TotalAccruedInterest",
+            "FieldID": -202724,
+            "Caption": "Total Accrued Interest",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TotalCash",
+            "FieldID": -202082,
+            "Caption": "Total Cash",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TotalCapitalGainBudget",
+            "FieldID": -202736,
+            "Caption": "Total Max Capital Gains Budget",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7489,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingRate3",
+            "FieldID": -202062,
+            "Caption": "Rate 3",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingRate2",
+            "FieldID": -202059,
+            "Caption": "Rate 2",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingRate4",
+            "FieldID": -202065,
+            "Caption": "Rate 4",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingRate6",
+            "FieldID": -202070,
+            "Caption": "Rate 6",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingRate5",
+            "FieldID": -202068,
+            "Caption": "Rate 5",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "URL",
+            "FieldID": -202078,
+            "Caption": "Web Page",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "URL",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "255",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "TotalTradableCashInGlobalCurrency",
+            "FieldID": -202715,
+            "Caption": "Total Tradable Cash",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "UseAverageCost",
+            "FieldID": -202105,
+            "Caption": "Use Average Cost",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7427,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Boolean",
+            "UIType": "CheckBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "1",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "WithholdingTaxTypeID",
+            "FieldID": -202047,
+            "Caption": "Withholding Tax Type",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "WithholdingTaxTypeID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "0",
+                    "Display": "(Use Settings)"
+                },
+                {
+                    "Data": "1",
+                    "Display": "Standard"
+                }
+            ],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "WithholdingTaxTypeCode",
+            "FieldID": -202723,
+            "Caption": "Withholding Tax Type Code",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TotalMarketValue",
+            "FieldID": -202020,
+            "Caption": "Total Market Value",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TotalCashInGlobalCurrency",
+            "FieldID": -202714,
+            "Caption": "Total Cash",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TotalMarketValueInGlobalCurrency",
+            "FieldID": -202713,
+            "Caption": "Total Market Value",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TotalTradableCash",
+            "FieldID": -202019,
+            "Caption": "Total Tradable Cash",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TotalMarketValueWithAccruedInterest",
+            "FieldID": -202725,
+            "Caption": "Total Market Value With Accrued Interest",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TaxNumber",
+            "FieldID": -202016,
+            "Caption": "Tax Number",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "16",
+                    "SpecialErrorMessage": null
+                },
+                {
+                    "Type": "RegularExpression",
+                    "Value": "^[\\p{InBasicLatin}]*$",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "SyntheticIndexDesc",
+            "FieldID": -202087,
+            "Caption": "Description",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7077,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "TaxRate",
+            "FieldID": -202075,
+            "Caption": "Tax Rate",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingBracket1",
+            "FieldID": -202055,
+            "Caption": "Bracket 1",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TaxStatus",
+            "FieldID": -202017,
+            "Caption": "Tax Status",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "",
+                    "Display": ""
+                },
+                {
+                    "Data": "Taxable",
+                    "Display": "Taxable"
+                },
+                {
+                    "Data": "Non-Taxable",
+                    "Display": "Non-Taxable"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "SleeveStrategyID",
+            "FieldID": -202729,
+            "Caption": "Sleeve Strategy",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7485,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [
+                {
+                    "Data": "1",
+                    "Display": "Unknown"
+                }
+            ],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "SleeveStrategyCode",
+            "FieldID": -202730,
+            "Caption": "Sleeve Strategy Code",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": 0,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "StartDate",
+            "FieldID": -202008,
+            "Caption": "Start Date",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Date",
+            "UIType": "Date",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MinValue",
+                    "Value": "01021753",
+                    "SpecialErrorMessage": null
+                },
+                {
+                    "Type": "MaxValue",
+                    "Value": "12319999",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "SupportMiFID",
+            "FieldID": -202726,
+            "Caption": "MiFID Eligible",
+            "DefaultValue": "0",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Boolean",
+            "UIType": "CheckBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "STCapitalGainBudget",
+            "FieldID": -202738,
+            "Caption": "Short-Term Capital Gains Budget",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7489,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingBracket4From",
+            "FieldID": -202066,
+            "Caption": "Bracket 4-From",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Currency",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingBracket4",
+            "FieldID": -202064,
+            "Caption": "Bracket 4",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingBracket5",
+            "FieldID": -202067,
+            "Caption": "Bracket 5",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingRate1",
+            "FieldID": -202056,
+            "Caption": "Rate 1",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingBracket5From",
+            "FieldID": -202069,
+            "Caption": "Bracket 5-From",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Currency",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingBracket2",
+            "FieldID": -202058,
+            "Caption": "Bracket 2",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingBracket1From",
+            "FieldID": -202057,
+            "Caption": "Bracket 1-From",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Currency",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingBracket2From",
+            "FieldID": -202060,
+            "Caption": "Bracket 2-From",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Currency",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingBracket3From",
+            "FieldID": -202063,
+            "Caption": "Bracket 3-From",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Currency",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "TieredBillingBracket3",
+            "FieldID": -202061,
+            "Caption": "Bracket 3",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "CapitalGainBudgetTypeID",
+            "FieldID": -202735,
+            "Caption": "Capital Gains Budget Type",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7489,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [
+                {
+                    "Data": "0",
+                    "Display": "(Use Settings)"
+                },
+                {
+                    "Data": "2",
+                    "Display": "Percentage"
+                },
+                {
+                    "Data": "1",
+                    "Display": "Value"
+                }
+            ],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "BrokerRepSymbol",
+            "FieldID": -202045,
+            "Caption": "Broker Rep Symbol",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "BrokerRepID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "12",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "CashBuffer",
+            "FieldID": -202727,
+            "Caption": "Cash Buffer",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "CashSecType",
+            "FieldID": -202022,
+            "Caption": "Default Cash Account Type",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "CashSecTypeCode"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "4",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "CashBufferPercent",
+            "FieldID": -202728,
+            "Caption": "Cash Buffer Percent",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "NegativePercent",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "BillingPhoneID",
+            "FieldID": -202505,
+            "Caption": "Phone ID",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "BillingMethodCode",
+            "FieldID": -202052,
+            "Caption": "Billing Method",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [
+                {
+                    "Data": "",
+                    "Display": "(Use Settings)"
+                },
+                {
+                    "Data": "t",
+                    "Display": "Tiered Billing"
+                },
+                {
+                    "Data": "f",
+                    "Display": "Flat Fee"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "1",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "BillingPhoneLabel",
+            "FieldID": -202506,
+            "Caption": "Phone Label",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "BillingPhoneID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "Business",
+                    "Display": "Business"
+                },
+                {
+                    "Data": "Business 2",
+                    "Display": "Business 2"
+                },
+                {
+                    "Data": "Home",
+                    "Display": "Home"
+                },
+                {
+                    "Data": "Home 2",
+                    "Display": "Home 2"
+                },
+                {
+                    "Data": "Pager",
+                    "Display": "Pager"
+                },
+                {
+                    "Data": "Cellular",
+                    "Display": "Cellular"
+                },
+                {
+                    "Data": "Business Fax",
+                    "Display": "Business Fax"
+                },
+                {
+                    "Data": "Home Fax",
+                    "Display": "Home Fax"
+                },
+                {
+                    "Data": "Car",
+                    "Display": "Car"
+                },
+                {
+                    "Data": "Other",
+                    "Display": "Other"
+                },
+                {
+                    "Data": "Other Fax",
+                    "Display": "Other Fax"
+                },
+                {
+                    "Data": "Sig. Other Home",
+                    "Display": "Sig. Other Home"
+                },
+                {
+                    "Data": "Sig. Other Business",
+                    "Display": "Sig. Other Business"
+                },
+                {
+                    "Data": "Sig. Other Fax",
+                    "Display": "Sig. Other Fax"
+                },
+                {
+                    "Data": "Assistant",
+                    "Display": "Assistant"
+                },
+                {
+                    "Data": "TTY/TDD",
+                    "Display": "TTY/TDD"
+                },
+                {
+                    "Data": "Summer Home",
+                    "Display": "Summer Home"
+                },
+                {
+                    "Data": "Vacation Home",
+                    "Display": "Vacation Home"
+                },
+                {
+                    "Data": "Winter Home",
+                    "Display": "Winter Home"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "16",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "BrokerRepName",
+            "FieldID": -202030,
+            "Caption": "Default Broker Account Symbol",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "BrokerRepID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "12",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "BrokerRepID",
+            "FieldID": -202029,
+            "Caption": "Default Broker Account Symbol",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "BrokerRepID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "DefaultSettlementCurrencyCode",
+            "FieldID": -202103,
+            "Caption": "Default Settlement Currency Code",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [
+                {
+                    "Data": "us",
+                    "Display": "US Dollar"
+                }
+            ],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "CustodianID",
+            "FieldID": -202034,
+            "Caption": "Custodian",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "CustodianID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "0",
+                    "Display": "(Use Settings)"
+                },
+                {
+                    "Data": "-2",
+                    "Display": "Not Classified"
+                }
+            ],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "DocumentLink",
+            "FieldID": -202079,
+            "Caption": "Portfolio Folder",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "Path",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "255",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "FlatFee",
+            "FieldID": -202054,
+            "Caption": "Flat Fee",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "DomicileCountryCode",
+            "FieldID": -202044,
+            "Caption": "Domicile Country",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "DomicileCountryCode"
+            ],
+            "ListValues": [
+                {
+                    "Data": "af",
+                    "Display": "Afghanistan"
+                },
+                {
+                    "Data": "ax",
+                    "Display": "Åland Islands"
+                },
+                {
+                    "Data": "al",
+                    "Display": "Albania"
+                },
+                {
+                    "Data": "dz",
+                    "Display": "Algeria"
+                },
+                {
+                    "Data": "as",
+                    "Display": "American Samoa"
+                },
+                {
+                    "Data": "ad",
+                    "Display": "Andorra"
+                },
+                {
+                    "Data": "ao",
+                    "Display": "Angola"
+                },
+                {
+                    "Data": "ai",
+                    "Display": "Anguilla"
+                },
+                {
+                    "Data": "aq",
+                    "Display": "Antarctica"
+                },
+                {
+                    "Data": "ag",
+                    "Display": "Antigua and Barbuda"
+                },
+                {
+                    "Data": "ar",
+                    "Display": "Argentina"
+                },
+                {
+                    "Data": "am",
+                    "Display": "Armenia"
+                },
+                {
+                    "Data": "aw",
+                    "Display": "Aruba"
+                },
+                {
+                    "Data": "au",
+                    "Display": "Australia"
+                },
+                {
+                    "Data": "at",
+                    "Display": "Austria"
+                },
+                {
+                    "Data": "az",
+                    "Display": "Azerbaijan"
+                },
+                {
+                    "Data": "bs",
+                    "Display": "Bahamas"
+                },
+                {
+                    "Data": "bh",
+                    "Display": "Bahrain"
+                },
+                {
+                    "Data": "bd",
+                    "Display": "Bangladesh"
+                },
+                {
+                    "Data": "bb",
+                    "Display": "Barbados"
+                },
+                {
+                    "Data": "by",
+                    "Display": "Belarus"
+                },
+                {
+                    "Data": "be",
+                    "Display": "Belgium"
+                },
+                {
+                    "Data": "bz",
+                    "Display": "Belize"
+                },
+                {
+                    "Data": "bj",
+                    "Display": "Benin"
+                },
+                {
+                    "Data": "bm",
+                    "Display": "Bermuda"
+                },
+                {
+                    "Data": "bt",
+                    "Display": "Bhutan"
+                },
+                {
+                    "Data": "bo",
+                    "Display": "Bolivia"
+                },
+                {
+                    "Data": "ba",
+                    "Display": "Bosnia and Herzegovina"
+                },
+                {
+                    "Data": "bw",
+                    "Display": "Botswana"
+                },
+                {
+                    "Data": "bv",
+                    "Display": "Bouvet Island"
+                },
+                {
+                    "Data": "br",
+                    "Display": "Brazil"
+                },
+                {
+                    "Data": "io",
+                    "Display": "British Indian Ocean Territory"
+                },
+                {
+                    "Data": "bn",
+                    "Display": "Brunei Darussalam"
+                },
+                {
+                    "Data": "bg",
+                    "Display": "Bulgaria"
+                },
+                {
+                    "Data": "bf",
+                    "Display": "Burkina Faso"
+                },
+                {
+                    "Data": "bi",
+                    "Display": "Burundi"
+                },
+                {
+                    "Data": "kh",
+                    "Display": "Cambodia"
+                },
+                {
+                    "Data": "cm",
+                    "Display": "Cameroon"
+                },
+                {
+                    "Data": "ca",
+                    "Display": "Canada"
+                },
+                {
+                    "Data": "cv",
+                    "Display": "Cape Verde"
+                },
+                {
+                    "Data": "ky",
+                    "Display": "Cayman Islands"
+                },
+                {
+                    "Data": "cf",
+                    "Display": "Central African Republic"
+                },
+                {
+                    "Data": "td",
+                    "Display": "Chad"
+                },
+                {
+                    "Data": "cl",
+                    "Display": "Chile"
+                },
+                {
+                    "Data": "cn",
+                    "Display": "China"
+                },
+                {
+                    "Data": "cx",
+                    "Display": "Christmas Island"
+                },
+                {
+                    "Data": "cc",
+                    "Display": "Cocos (Keeling) Islands"
+                },
+                {
+                    "Data": "co",
+                    "Display": "Colombia"
+                },
+                {
+                    "Data": "km",
+                    "Display": "Comoros"
+                },
+                {
+                    "Data": "cg",
+                    "Display": "Congo"
+                },
+                {
+                    "Data": "cd",
+                    "Display": "Congo, The Democratic Republic of the"
+                },
+                {
+                    "Data": "ck",
+                    "Display": "Cook Islands"
+                },
+                {
+                    "Data": "cr",
+                    "Display": "Costa Rica"
+                },
+                {
+                    "Data": "ci",
+                    "Display": "Côte d'Ivoire"
+                },
+                {
+                    "Data": "hr",
+                    "Display": "Croatia"
+                },
+                {
+                    "Data": "cu",
+                    "Display": "Cuba"
+                },
+                {
+                    "Data": "cy",
+                    "Display": "Cyprus"
+                },
+                {
+                    "Data": "cz",
+                    "Display": "Czech Republic"
+                },
+                {
+                    "Data": "dk",
+                    "Display": "Denmark"
+                },
+                {
+                    "Data": "dj",
+                    "Display": "Djibouti"
+                },
+                {
+                    "Data": "do",
+                    "Display": "Dominican Republic"
+                },
+                {
+                    "Data": "ec",
+                    "Display": "Ecuador"
+                },
+                {
+                    "Data": "eg",
+                    "Display": "Egypt"
+                },
+                {
+                    "Data": "sv",
+                    "Display": "El Salvador"
+                },
+                {
+                    "Data": "gq",
+                    "Display": "Equatorial Guinea"
+                },
+                {
+                    "Data": "er",
+                    "Display": "Eritrea"
+                },
+                {
+                    "Data": "ee",
+                    "Display": "Estonia"
+                },
+                {
+                    "Data": "et",
+                    "Display": "Ethiopia"
+                },
+                {
+                    "Data": "eu",
+                    "Display": "Europe"
+                },
+                {
+                    "Data": "fk",
+                    "Display": "Falkland Islands (Malvinas)"
+                },
+                {
+                    "Data": "fo",
+                    "Display": "Faroe Islands"
+                },
+                {
+                    "Data": "fj",
+                    "Display": "Fiji"
+                },
+                {
+                    "Data": "fi",
+                    "Display": "Finland"
+                },
+                {
+                    "Data": "fr",
+                    "Display": "France"
+                },
+                {
+                    "Data": "gf",
+                    "Display": "French Guiana"
+                },
+                {
+                    "Data": "pf",
+                    "Display": "French Polynesia"
+                },
+                {
+                    "Data": "tf",
+                    "Display": "French Southern Territories"
+                },
+                {
+                    "Data": "ga",
+                    "Display": "Gabon"
+                },
+                {
+                    "Data": "gm",
+                    "Display": "Gambia"
+                },
+                {
+                    "Data": "ge",
+                    "Display": "Georgia"
+                },
+                {
+                    "Data": "de",
+                    "Display": "Germany"
+                },
+                {
+                    "Data": "gh",
+                    "Display": "Ghana"
+                },
+                {
+                    "Data": "gi",
+                    "Display": "Gibraltar"
+                },
+                {
+                    "Data": "gr",
+                    "Display": "Greece"
+                },
+                {
+                    "Data": "gl",
+                    "Display": "Greenland"
+                },
+                {
+                    "Data": "gd",
+                    "Display": "Grenada"
+                },
+                {
+                    "Data": "gp",
+                    "Display": "Guadeloupe"
+                },
+                {
+                    "Data": "gu",
+                    "Display": "Guam"
+                },
+                {
+                    "Data": "gt",
+                    "Display": "Guatemala"
+                },
+                {
+                    "Data": "gn",
+                    "Display": "Guinea"
+                },
+                {
+                    "Data": "gw",
+                    "Display": "Guinea-Bissau"
+                },
+                {
+                    "Data": "gy",
+                    "Display": "Guyana"
+                },
+                {
+                    "Data": "ht",
+                    "Display": "Haiti"
+                },
+                {
+                    "Data": "hm",
+                    "Display": "Herd Island and McDonald Islands"
+                },
+                {
+                    "Data": "va",
+                    "Display": "Holy See (Vatican City State)"
+                },
+                {
+                    "Data": "hn",
+                    "Display": "Honduras"
+                },
+                {
+                    "Data": "hk",
+                    "Display": "Hong Kong"
+                },
+                {
+                    "Data": "hu",
+                    "Display": "Hungary"
+                },
+                {
+                    "Data": "is",
+                    "Display": "Iceland"
+                },
+                {
+                    "Data": "in",
+                    "Display": "India"
+                },
+                {
+                    "Data": "id",
+                    "Display": "Indonesia"
+                },
+                {
+                    "Data": "ir",
+                    "Display": "Iran (Islamic Republic of)"
+                },
+                {
+                    "Data": "iq",
+                    "Display": "Iraq"
+                },
+                {
+                    "Data": "ie",
+                    "Display": "Ireland"
+                },
+                {
+                    "Data": "il",
+                    "Display": "Israel"
+                },
+                {
+                    "Data": "it",
+                    "Display": "Italy"
+                },
+                {
+                    "Data": "jm",
+                    "Display": "Jamaica"
+                },
+                {
+                    "Data": "jp",
+                    "Display": "Japan"
+                },
+                {
+                    "Data": "jo",
+                    "Display": "Jordan"
+                },
+                {
+                    "Data": "kz",
+                    "Display": "Kazakhstan"
+                },
+                {
+                    "Data": "ke",
+                    "Display": "Kenya"
+                },
+                {
+                    "Data": "ki",
+                    "Display": "Kiribati"
+                },
+                {
+                    "Data": "kp",
+                    "Display": "Korea (Democratic People's Rep. of)"
+                },
+                {
+                    "Data": "kr",
+                    "Display": "Korea (Republic of)"
+                },
+                {
+                    "Data": "kw",
+                    "Display": "Kuwait"
+                },
+                {
+                    "Data": "kg",
+                    "Display": "Kyrgyzstan"
+                },
+                {
+                    "Data": "la",
+                    "Display": "Lao People's Democratic Republic"
+                },
+                {
+                    "Data": "lv",
+                    "Display": "Latvia"
+                },
+                {
+                    "Data": "lb",
+                    "Display": "Lebanon"
+                },
+                {
+                    "Data": "ls",
+                    "Display": "Lesotho"
+                },
+                {
+                    "Data": "lr",
+                    "Display": "Liberia"
+                },
+                {
+                    "Data": "ly",
+                    "Display": "Libyan Arab Jamahiriya"
+                },
+                {
+                    "Data": "li",
+                    "Display": "Liechtenstein"
+                },
+                {
+                    "Data": "lt",
+                    "Display": "Lithuania"
+                },
+                {
+                    "Data": "lu",
+                    "Display": "Luxembourg"
+                },
+                {
+                    "Data": "mo",
+                    "Display": "Macau"
+                },
+                {
+                    "Data": "mk",
+                    "Display": "Macedonia"
+                },
+                {
+                    "Data": "mg",
+                    "Display": "Madagascar"
+                },
+                {
+                    "Data": "mw",
+                    "Display": "Malawi"
+                },
+                {
+                    "Data": "my",
+                    "Display": "Malaysia"
+                },
+                {
+                    "Data": "mv",
+                    "Display": "Maldives"
+                },
+                {
+                    "Data": "ml",
+                    "Display": "Mali"
+                },
+                {
+                    "Data": "mt",
+                    "Display": "Malta"
+                },
+                {
+                    "Data": "mh",
+                    "Display": "Marshall Islands"
+                },
+                {
+                    "Data": "mq",
+                    "Display": "Martinique"
+                },
+                {
+                    "Data": "mr",
+                    "Display": "Mauritania"
+                },
+                {
+                    "Data": "mu",
+                    "Display": "Mauritius"
+                },
+                {
+                    "Data": "yt",
+                    "Display": "Mayotte"
+                },
+                {
+                    "Data": "mx",
+                    "Display": "Mexico"
+                },
+                {
+                    "Data": "fm",
+                    "Display": "Micronesia, Federated States of"
+                },
+                {
+                    "Data": "md",
+                    "Display": "Moldova, Republic of"
+                },
+                {
+                    "Data": "mc",
+                    "Display": "Monaco"
+                },
+                {
+                    "Data": "mn",
+                    "Display": "Mongolia"
+                },
+                {
+                    "Data": "me",
+                    "Display": "Montenegro"
+                },
+                {
+                    "Data": "ms",
+                    "Display": "Montserrat"
+                },
+                {
+                    "Data": "ma",
+                    "Display": "Morocco"
+                },
+                {
+                    "Data": "mz",
+                    "Display": "Mozambique"
+                },
+                {
+                    "Data": "mm",
+                    "Display": "Myanmar"
+                },
+                {
+                    "Data": "na",
+                    "Display": "Namibia"
+                },
+                {
+                    "Data": "nr",
+                    "Display": "Nauru"
+                },
+                {
+                    "Data": "np",
+                    "Display": "Nepal"
+                },
+                {
+                    "Data": "nl",
+                    "Display": "Netherlands"
+                },
+                {
+                    "Data": "an",
+                    "Display": "Netherlands Antilles"
+                },
+                {
+                    "Data": "nc",
+                    "Display": "New Caledonia"
+                },
+                {
+                    "Data": "nz",
+                    "Display": "New Zealand"
+                },
+                {
+                    "Data": "ni",
+                    "Display": "Nicaragua"
+                },
+                {
+                    "Data": "ne",
+                    "Display": "Niger"
+                },
+                {
+                    "Data": "ng",
+                    "Display": "Nigeria"
+                },
+                {
+                    "Data": "nu",
+                    "Display": "Niue"
+                },
+                {
+                    "Data": "nf",
+                    "Display": "Norfolk Island"
+                },
+                {
+                    "Data": "mp",
+                    "Display": "Northern Mariana Islands"
+                },
+                {
+                    "Data": "no",
+                    "Display": "Norway"
+                },
+                {
+                    "Data": "",
+                    "Display": "(Use Settings)"
+                },
+                {
+                    "Data": "om",
+                    "Display": "Oman"
+                },
+                {
+                    "Data": "pk",
+                    "Display": "Pakistan"
+                },
+                {
+                    "Data": "pw",
+                    "Display": "Palau"
+                },
+                {
+                    "Data": "ps",
+                    "Display": "Palestinian Territory, Occupied"
+                },
+                {
+                    "Data": "pa",
+                    "Display": "Panama"
+                },
+                {
+                    "Data": "pg",
+                    "Display": "Papua New Guinea"
+                },
+                {
+                    "Data": "py",
+                    "Display": "Paraguay"
+                },
+                {
+                    "Data": "pe",
+                    "Display": "Peru"
+                },
+                {
+                    "Data": "ph",
+                    "Display": "Philippines"
+                },
+                {
+                    "Data": "pn",
+                    "Display": "Pitcairn"
+                },
+                {
+                    "Data": "pl",
+                    "Display": "Poland"
+                },
+                {
+                    "Data": "pt",
+                    "Display": "Portugal"
+                },
+                {
+                    "Data": "pr",
+                    "Display": "Puerto Rico"
+                },
+                {
+                    "Data": "qa",
+                    "Display": "Qatar"
+                },
+                {
+                    "Data": "re",
+                    "Display": "Réunion"
+                },
+                {
+                    "Data": "ro",
+                    "Display": "Romania"
+                },
+                {
+                    "Data": "ru",
+                    "Display": "Russian Federation"
+                },
+                {
+                    "Data": "rw",
+                    "Display": "Rwanda"
+                },
+                {
+                    "Data": "sh",
+                    "Display": "Saint Helena"
+                },
+                {
+                    "Data": "kn",
+                    "Display": "Saint Kitts and Nevis"
+                },
+                {
+                    "Data": "lc",
+                    "Display": "Saint Lucia"
+                },
+                {
+                    "Data": "pm",
+                    "Display": "Saint Pierre and Miquelon"
+                },
+                {
+                    "Data": "vc",
+                    "Display": "Saint Vincent and the Grenadines"
+                },
+                {
+                    "Data": "ws",
+                    "Display": "Samoa"
+                },
+                {
+                    "Data": "sm",
+                    "Display": "San Marino"
+                },
+                {
+                    "Data": "st",
+                    "Display": "Sao Tome and Principe"
+                },
+                {
+                    "Data": "sa",
+                    "Display": "Saudi Arabia"
+                },
+                {
+                    "Data": "sn",
+                    "Display": "Senegal"
+                },
+                {
+                    "Data": "rs",
+                    "Display": "Serbia"
+                },
+                {
+                    "Data": "sc",
+                    "Display": "Seychelles"
+                },
+                {
+                    "Data": "sl",
+                    "Display": "Sierra Leone"
+                },
+                {
+                    "Data": "sg",
+                    "Display": "Singapore"
+                },
+                {
+                    "Data": "sk",
+                    "Display": "Slovakia"
+                },
+                {
+                    "Data": "si",
+                    "Display": "Slovenia"
+                },
+                {
+                    "Data": "sb",
+                    "Display": "Solomon Islands"
+                },
+                {
+                    "Data": "so",
+                    "Display": "Somalia"
+                },
+                {
+                    "Data": "za",
+                    "Display": "South Africa"
+                },
+                {
+                    "Data": "gs",
+                    "Display": "South Georgia and the South Sandwich Islands"
+                },
+                {
+                    "Data": "es",
+                    "Display": "Spain"
+                },
+                {
+                    "Data": "lk",
+                    "Display": "Sri Lanka"
+                },
+                {
+                    "Data": "sd",
+                    "Display": "Sudan"
+                },
+                {
+                    "Data": "sr",
+                    "Display": "Suriname"
+                },
+                {
+                    "Data": "sj",
+                    "Display": "Svalbard and Jan Mayen"
+                },
+                {
+                    "Data": "sz",
+                    "Display": "Swaziland"
+                },
+                {
+                    "Data": "se",
+                    "Display": "Sweden"
+                },
+                {
+                    "Data": "ch",
+                    "Display": "Switzerland"
+                },
+                {
+                    "Data": "sy",
+                    "Display": "Syrian Arab Republic"
+                },
+                {
+                    "Data": "tw",
+                    "Display": "Taiwan"
+                },
+                {
+                    "Data": "tj",
+                    "Display": "Tajikistan"
+                },
+                {
+                    "Data": "tz",
+                    "Display": "Tanzania, United Republic of"
+                },
+                {
+                    "Data": "th",
+                    "Display": "Thailand"
+                },
+                {
+                    "Data": "tl",
+                    "Display": "Timor-Leste"
+                },
+                {
+                    "Data": "tg",
+                    "Display": "Togo"
+                },
+                {
+                    "Data": "tk",
+                    "Display": "Tokelau"
+                },
+                {
+                    "Data": "to",
+                    "Display": "Tonga"
+                },
+                {
+                    "Data": "tt",
+                    "Display": "Trinidad and Tobago"
+                },
+                {
+                    "Data": "tn",
+                    "Display": "Tunisia"
+                },
+                {
+                    "Data": "tr",
+                    "Display": "Turkey"
+                },
+                {
+                    "Data": "tm",
+                    "Display": "Turkmenistan"
+                },
+                {
+                    "Data": "tc",
+                    "Display": "Turks and Caicos Islands"
+                },
+                {
+                    "Data": "tv",
+                    "Display": "Tuvalu"
+                },
+                {
+                    "Data": "ug",
+                    "Display": "Uganda"
+                },
+                {
+                    "Data": "ua",
+                    "Display": "Ukraine"
+                },
+                {
+                    "Data": "ae",
+                    "Display": "United Arab Emirates"
+                },
+                {
+                    "Data": "gb",
+                    "Display": "United Kingdom"
+                },
+                {
+                    "Data": "us",
+                    "Display": "United States"
+                },
+                {
+                    "Data": "um",
+                    "Display": "United States Minor Outlying Islands"
+                },
+                {
+                    "Data": "uy",
+                    "Display": "Uruguay"
+                },
+                {
+                    "Data": "uz",
+                    "Display": "Uzbekistan"
+                },
+                {
+                    "Data": "vu",
+                    "Display": "Vanuatu"
+                },
+                {
+                    "Data": "ve",
+                    "Display": "Venezuela"
+                },
+                {
+                    "Data": "vn",
+                    "Display": "Viet Nam"
+                },
+                {
+                    "Data": "vg",
+                    "Display": "Virgin Islands, British"
+                },
+                {
+                    "Data": "vi",
+                    "Display": "Virgin Islands, U.S."
+                },
+                {
+                    "Data": "wf",
+                    "Display": "Wallis and Futuna"
+                },
+                {
+                    "Data": "eh",
+                    "Display": "Western Sahara"
+                },
+                {
+                    "Data": "ye",
+                    "Display": "Yemen"
+                },
+                {
+                    "Data": "zm",
+                    "Display": "Zambia"
+                },
+                {
+                    "Data": "zw",
+                    "Display": "Zimbabwe"
+                }
+            ],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "CashSecurityID",
+            "FieldID": -202023,
+            "Caption": "Cash Security ID",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "CashSecurityID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "CashSecTypeCode",
+            "FieldID": -202021,
+            "Caption": "Cash SecType Code",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "CashSecTypeCode"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "4",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "CashSecuritySymbol",
+            "FieldID": -202024,
+            "Caption": "Default Cash Account Symbol",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "CashSecurityID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "25",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "ClosingMethodCode",
+            "FieldID": -202038,
+            "Caption": "Current Closing Method",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "ClosingMethodCode"
+            ],
+            "ListValues": [
+                {
+                    "Data": "",
+                    "Display": "(Use Settings)"
+                },
+                {
+                    "Data": "s",
+                    "Display": "Specify"
+                },
+                {
+                    "Data": "f",
+                    "Display": "FIFO"
+                },
+                {
+                    "Data": "l",
+                    "Display": "LIFO"
+                },
+                {
+                    "Data": "h",
+                    "Display": "Highest Cost"
+                },
+                {
+                    "Data": "c",
+                    "Display": "Lowest Cost"
+                },
+                {
+                    "Data": "m",
+                    "Display": "Minimum Short Term Gain"
+                },
+                {
+                    "Data": "g",
+                    "Display": "Average Cost"
+                },
+                {
+                    "Data": "v",
+                    "Display": "Average Cost FIFO"
+                },
+                {
+                    "Data": "y",
+                    "Display": "Long Term Highest Cost"
+                },
+                {
+                    "Data": "x",
+                    "Display": "Tax Sensitive"
+                }
+            ],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "CloseDate",
+            "FieldID": -202011,
+            "Caption": "Close Date",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Date",
+            "UIType": "Date",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MinValue",
+                    "Value": "01021753",
+                    "SpecialErrorMessage": null
+                },
+                {
+                    "Type": "MaxValue",
+                    "Value": "12319999",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "AuditEventID",
+            "FieldID": -202150,
+            "Caption": "Max Audit Event ID",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "AddToMasterGroup",
+            "FieldID": -202147,
+            "Caption": "Add To Master Group",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": 0,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Boolean",
+            "UIType": "CheckBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "AverageCostCode",
+            "FieldID": -202041,
+            "Caption": "Average Cost Code",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "ClosingMethodCode"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "1",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "BankAddressLabel",
+            "FieldID": -202604,
+            "Caption": "Address Label",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "BankAddressID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "Business",
+                    "Display": "Business"
+                },
+                {
+                    "Data": "Home",
+                    "Display": "Home"
+                },
+                {
+                    "Data": "Vacation Home",
+                    "Display": "Vacation Home"
+                },
+                {
+                    "Data": "Summer Home",
+                    "Display": "Summer Home"
+                },
+                {
+                    "Data": "Winter Home",
+                    "Display": "Winter Home"
+                },
+                {
+                    "Data": "Business 2",
+                    "Display": "Business 2"
+                },
+                {
+                    "Data": "Home 2",
+                    "Display": "Home 2"
+                },
+                {
+                    "Data": "Other",
+                    "Display": "Other"
+                },
+                {
+                    "Data": "Sig. Other",
+                    "Display": "Sig. Other"
+                },
+                {
+                    "Data": "None",
+                    "Display": "None"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "16",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "BankAddressID",
+            "FieldID": -202603,
+            "Caption": "Address ID",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "AccruedInterestPMCode",
+            "FieldID": -202036,
+            "Caption": "PM Code",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7040,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "AccruedInterestID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "1",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "AccruedInterestID",
+            "FieldID": -202033,
+            "Caption": "Accrued Interest",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7040,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "AccruedInterestID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "0",
+                    "Display": "(Use Settings)"
+                },
+                {
+                    "Data": "1",
+                    "Display": "Do not Show on Reports"
+                },
+                {
+                    "Data": "2",
+                    "Display": "All Reports as of Trade Date AM"
+                },
+                {
+                    "Data": "3",
+                    "Display": "All Reports as of Trade Date PM"
+                },
+                {
+                    "Data": "4",
+                    "Display": "All Reports as of Settle Date AM"
+                },
+                {
+                    "Data": "5",
+                    "Display": "All Reports as of Settle Date PM"
+                },
+                {
+                    "Data": "10",
+                    "Display": "All Reports as of Trade Date AM with Traded PA/SA"
+                },
+                {
+                    "Data": "11",
+                    "Display": "All Reports as of Trade Date PM with Traded PA/SA"
+                },
+                {
+                    "Data": "6",
+                    "Display": "Performance Reports as of Trade Date AM"
+                },
+                {
+                    "Data": "7",
+                    "Display": "Performance Reports as of Trade Date PM"
+                },
+                {
+                    "Data": "8",
+                    "Display": "Performance Reports as of Settle Date AM"
+                },
+                {
+                    "Data": "9",
+                    "Display": "Performance Reports as of Settle Date PM"
+                },
+                {
+                    "Data": "12",
+                    "Display": "Performance Reports as of Trade Date AM with Traded PA/SA"
+                },
+                {
+                    "Data": "13",
+                    "Display": "Performance Reports as of Trade Date PM with Traded PA/SA"
+                }
+            ],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "AccruedInterestShowCode",
+            "FieldID": -202035,
+            "Caption": "Show Code",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7040,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "AccruedInterestID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "1",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "AddPortfolioToSync",
+            "FieldID": -202741,
+            "Caption": "",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7488,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Boolean",
+            "UIType": "None",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "AccruedInterestTDCode",
+            "FieldID": -202037,
+            "Caption": "TD Code",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7040,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "AccruedInterestID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "1",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "BillingAddressID",
+            "FieldID": -202503,
+            "Caption": "Address ID",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "BillInArrears",
+            "FieldID": -202072,
+            "Caption": "Billing Style",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "BooleanWithBlank",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [
+                {
+                    "Data": "1",
+                    "Display": "Arrears"
+                },
+                {
+                    "Data": "0",
+                    "Display": "Advance"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "1",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "BillingAddressLabel",
+            "FieldID": -202504,
+            "Caption": "Address Label",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "BillingAddressID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "Business",
+                    "Display": "Business"
+                },
+                {
+                    "Data": "Home",
+                    "Display": "Home"
+                },
+                {
+                    "Data": "Vacation Home",
+                    "Display": "Vacation Home"
+                },
+                {
+                    "Data": "Summer Home",
+                    "Display": "Summer Home"
+                },
+                {
+                    "Data": "Winter Home",
+                    "Display": "Winter Home"
+                },
+                {
+                    "Data": "Business 2",
+                    "Display": "Business 2"
+                },
+                {
+                    "Data": "Home 2",
+                    "Display": "Home 2"
+                },
+                {
+                    "Data": "Other",
+                    "Display": "Other"
+                },
+                {
+                    "Data": "Sig. Other",
+                    "Display": "Sig. Other"
+                },
+                {
+                    "Data": "None",
+                    "Display": "None"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "16",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "BillingContactID",
+            "FieldID": -202501,
+            "Caption": "Contact ID",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "BillingContactID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "10",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "BillingContactCode",
+            "FieldID": -202502,
+            "Caption": "Contact Code",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "BillingContactID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "32",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "BankContactID",
+            "FieldID": -202601,
+            "Caption": "Contact ID",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "BankContactID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "10",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "BankContactCode",
+            "FieldID": -202602,
+            "Caption": "Contact Code",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "BankContactID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "32",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "BankPhoneID",
+            "FieldID": -202605,
+            "Caption": "Bank Phone ID",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "BaseCurrencyCode",
+            "FieldID": -202042,
+            "Caption": "Base Currency",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7401,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "BaseCurrencyCode"
+            ],
+            "ListValues": [
+                {
+                    "Data": "",
+                    "Display": "(Use Settings)"
+                },
+                {
+                    "Data": "us",
+                    "Display": "US Dollar"
+                }
+            ],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "BankPhoneLabel",
+            "FieldID": -202606,
+            "Caption": "Phone Label",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "BankPhoneID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "Business",
+                    "Display": "Business"
+                },
+                {
+                    "Data": "Business 2",
+                    "Display": "Business 2"
+                },
+                {
+                    "Data": "Home",
+                    "Display": "Home"
+                },
+                {
+                    "Data": "Home 2",
+                    "Display": "Home 2"
+                },
+                {
+                    "Data": "Pager",
+                    "Display": "Pager"
+                },
+                {
+                    "Data": "Cellular",
+                    "Display": "Cellular"
+                },
+                {
+                    "Data": "Business Fax",
+                    "Display": "Business Fax"
+                },
+                {
+                    "Data": "Home Fax",
+                    "Display": "Home Fax"
+                },
+                {
+                    "Data": "Car",
+                    "Display": "Car"
+                },
+                {
+                    "Data": "Other",
+                    "Display": "Other"
+                },
+                {
+                    "Data": "Other Fax",
+                    "Display": "Other Fax"
+                },
+                {
+                    "Data": "Sig. Other Home",
+                    "Display": "Sig. Other Home"
+                },
+                {
+                    "Data": "Sig. Other Business",
+                    "Display": "Sig. Other Business"
+                },
+                {
+                    "Data": "Sig. Other Fax",
+                    "Display": "Sig. Other Fax"
+                },
+                {
+                    "Data": "Assistant",
+                    "Display": "Assistant"
+                },
+                {
+                    "Data": "TTY/TDD",
+                    "Display": "TTY/TDD"
+                },
+                {
+                    "Data": "Summer Home",
+                    "Display": "Summer Home"
+                },
+                {
+                    "Data": "Vacation Home",
+                    "Display": "Vacation Home"
+                },
+                {
+                    "Data": "Winter Home",
+                    "Display": "Winter Home"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "16",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "FootNoteLine1",
+            "FieldID": -202048,
+            "Caption": "Footnote Line 1",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7040,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "OwnerContactAddressLabel",
+            "FieldID": -202404,
+            "Caption": "Primary Owner Address Label",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "OwnerContactAddressID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "Business",
+                    "Display": "Business"
+                },
+                {
+                    "Data": "Home",
+                    "Display": "Home"
+                },
+                {
+                    "Data": "Vacation Home",
+                    "Display": "Vacation Home"
+                },
+                {
+                    "Data": "Summer Home",
+                    "Display": "Summer Home"
+                },
+                {
+                    "Data": "Winter Home",
+                    "Display": "Winter Home"
+                },
+                {
+                    "Data": "Business 2",
+                    "Display": "Business 2"
+                },
+                {
+                    "Data": "Home 2",
+                    "Display": "Home 2"
+                },
+                {
+                    "Data": "Other",
+                    "Display": "Other"
+                },
+                {
+                    "Data": "Sig. Other",
+                    "Display": "Sig. Other"
+                },
+                {
+                    "Data": "None",
+                    "Display": "None"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "16",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "OwnerContactAddressID",
+            "FieldID": -202403,
+            "Caption": "Primary Owner Address ID",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "OwnerContactCode",
+            "FieldID": -202402,
+            "Caption": "Primary Owner Code",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "OwnerContactID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "OwnerContactName",
+            "FieldID": -202407,
+            "Caption": "Primary Owner",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "Hyperlink",
+            "PrimaryKey": false,
+            "LinkTarget": "ContactDetail.aspx?linkfield={0}",
+            "LinkFields": [
+                "OwnerContactID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "255",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "OwnerContactID",
+            "FieldID": -202401,
+            "Caption": "Primary Owner",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "LookupWidget",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "OwnerContactID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "10",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "NextTranID",
+            "FieldID": -202085,
+            "Caption": "Next TranID",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "MinimumFee",
+            "FieldID": -202073,
+            "Caption": "Minimum Fee",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "NumOfCopies",
+            "FieldID": -202014,
+            "Caption": "Number Of Copies",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7040,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MinValue",
+                    "Value": "0",
+                    "SpecialErrorMessage": null
+                },
+                {
+                    "Type": "MaxValue",
+                    "Value": "999",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "OwnerCode",
+            "FieldID": -202076,
+            "Caption": "Owned By Code",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7046,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "OwnerID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "32",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "OwnerClassID",
+            "FieldID": -202089,
+            "Caption": "Owner ClassID",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7066,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "PauseDataSync",
+            "FieldID": -202734,
+            "Caption": "Exclude from Suite Data Synchronization",
+            "DefaultValue": "0",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7488,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Boolean",
+            "UIType": "CheckBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "PastDueAmount",
+            "FieldID": -202074,
+            "Caption": "Past Due Amount",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "PaymentFrequencyID",
+            "FieldID": -202071,
+            "Caption": "Payment Frequency",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7038,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [
+                {
+                    "Data": "1",
+                    "Display": "Annual"
+                },
+                {
+                    "Data": "2",
+                    "Display": "Semiannual"
+                },
+                {
+                    "Data": "4",
+                    "Display": "Quarterly"
+                },
+                {
+                    "Data": "12",
+                    "Display": "Monthly"
+                }
+            ],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "PortfolioBaseCurrencyISOCode",
+            "FieldID": -202718,
+            "Caption": "PortfolioBaseCurrencyISOCode",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": 0,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "None",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "PerfCloseDate",
+            "FieldID": -202108,
+            "Caption": "Performance Close Date",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7044,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Date",
+            "UIType": "Date",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MinValue",
+                    "Value": "01021753",
+                    "SpecialErrorMessage": null
+                },
+                {
+                    "Type": "MaxValue",
+                    "Value": "12319999",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "OwnerContactPhoneLabel",
+            "FieldID": -202406,
+            "Caption": "Primary Owner Phone",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "OwnerContactPhoneID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "Business",
+                    "Display": "Business"
+                },
+                {
+                    "Data": "Business 2",
+                    "Display": "Business 2"
+                },
+                {
+                    "Data": "Home",
+                    "Display": "Home"
+                },
+                {
+                    "Data": "Home 2",
+                    "Display": "Home 2"
+                },
+                {
+                    "Data": "Pager",
+                    "Display": "Pager"
+                },
+                {
+                    "Data": "Cellular",
+                    "Display": "Cellular"
+                },
+                {
+                    "Data": "Business Fax",
+                    "Display": "Business Fax"
+                },
+                {
+                    "Data": "Home Fax",
+                    "Display": "Home Fax"
+                },
+                {
+                    "Data": "Car",
+                    "Display": "Car"
+                },
+                {
+                    "Data": "Other",
+                    "Display": "Other"
+                },
+                {
+                    "Data": "Other Fax",
+                    "Display": "Other Fax"
+                },
+                {
+                    "Data": "Sig. Other Home",
+                    "Display": "Sig. Other Home"
+                },
+                {
+                    "Data": "Sig. Other Business",
+                    "Display": "Sig. Other Business"
+                },
+                {
+                    "Data": "Sig. Other Fax",
+                    "Display": "Sig. Other Fax"
+                },
+                {
+                    "Data": "Assistant",
+                    "Display": "Assistant"
+                },
+                {
+                    "Data": "TTY/TDD",
+                    "Display": "TTY/TDD"
+                },
+                {
+                    "Data": "Summer Home",
+                    "Display": "Summer Home"
+                },
+                {
+                    "Data": "Vacation Home",
+                    "Display": "Vacation Home"
+                },
+                {
+                    "Data": "Winter Home",
+                    "Display": "Winter Home"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "16",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "OwnerContactPhoneID",
+            "FieldID": -202405,
+            "Caption": "Primary Owner Phone ID",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "OwnerContactType",
+            "FieldID": -202408,
+            "Caption": "Primary Owner Contact Type",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "OwnerName",
+            "FieldID": -202013,
+            "Caption": "Owned By",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7046,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "OwnerID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "OwnerID",
+            "FieldID": -202012,
+            "Caption": "Owned By",
+            "DefaultValue": "-14",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7046,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "None",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "OwnerID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "IncomeSecurityID",
+            "FieldID": -202027,
+            "Caption": "Income Security ID",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "IncomeSecurityID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "IncomeSecTypeCode",
+            "FieldID": -202025,
+            "Caption": "Income SecType Code",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "IncomeSecTypeCode"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "4",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "IncomeSecuritySymbol",
+            "FieldID": -202028,
+            "Caption": "Default Income Account Symbol",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "IncomeSecurityID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "25",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "InternalClosingMethodCode",
+            "FieldID": -202043,
+            "Caption": "Internal Closing Method Code",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "ClosingMethodCode"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "16",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "InitialValue",
+            "FieldID": -202009,
+            "Caption": "Initial Value",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "Currency",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "FootNoteLine3",
+            "FieldID": -202050,
+            "Caption": "Footnote Line 3",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7040,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "FootNoteLine2",
+            "FieldID": -202049,
+            "Caption": "Footnote Line 2",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7040,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "FxSetCode",
+            "FieldID": -202101,
+            "Caption": "Fx Set Code",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7040,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "IncomeSecType",
+            "FieldID": -202026,
+            "Caption": "Default Income Account Type",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "IncomeSecTypeCode"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "4",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "HoldingsStatus",
+            "FieldID": -202719,
+            "Caption": "Holdings Update Status",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": 0,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [
+                {
+                    "Data": "F",
+                    "Display": "Failed"
+                },
+                {
+                    "Data": "U",
+                    "Display": "Current"
+                },
+                {
+                    "Data": "S",
+                    "Display": "Pending"
+                }
+            ],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "LongTaxRate",
+            "FieldID": -202733,
+            "Caption": "Long-term Tax Rate",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7427,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Float",
+            "UIType": "NegativePercent",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "LocaleID",
+            "FieldID": -202095,
+            "Caption": "Locale",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7040,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Integer",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [
+                {
+                    "Data": "0",
+                    "Display": "(Use Settings)"
+                },
+                {
+                    "Data": "1078",
+                    "Display": "Afrikaans"
+                },
+                {
+                    "Data": "14337",
+                    "Display": "Arabic (UAE)"
+                },
+                {
+                    "Data": "1014337",
+                    "Display": "Arabic (UAE) - Sharia"
+                },
+                {
+                    "Data": "1069",
+                    "Display": "Basque"
+                },
+                {
+                    "Data": "1027",
+                    "Display": "Catalan"
+                },
+                {
+                    "Data": "1030",
+                    "Display": "Danish"
+                },
+                {
+                    "Data": "2067",
+                    "Display": "Dutch (Belgium)"
+                },
+                {
+                    "Data": "1043",
+                    "Display": "Dutch (Netherlands)"
+                },
+                {
+                    "Data": "3081",
+                    "Display": "English (Australia)"
+                },
+                {
+                    "Data": "10249",
+                    "Display": "English (Belize)"
+                },
+                {
+                    "Data": "4105",
+                    "Display": "English (Canada)"
+                },
+                {
+                    "Data": "9225",
+                    "Display": "English (Caribbean)"
+                },
+                {
+                    "Data": "6153",
+                    "Display": "English (Ireland)"
+                },
+                {
+                    "Data": "8201",
+                    "Display": "English (Jamaica)"
+                },
+                {
+                    "Data": "5129",
+                    "Display": "English (New Zealand)"
+                },
+                {
+                    "Data": "13321",
+                    "Display": "English (Philippines)"
+                },
+                {
+                    "Data": "7177",
+                    "Display": "English (South Africa)"
+                },
+                {
+                    "Data": "11273",
+                    "Display": "English (Trinidad)"
+                },
+                {
+                    "Data": "2057",
+                    "Display": "English (United Kingdom)"
+                },
+                {
+                    "Data": "1002057",
+                    "Display": "English (United Kingdom) - Sharia"
+                },
+                {
+                    "Data": "1033",
+                    "Display": "English (United States)"
+                },
+                {
+                    "Data": "1001033",
+                    "Display": "English (United States) - Sharia"
+                },
+                {
+                    "Data": "12297",
+                    "Display": "English (Zimbabwe)"
+                },
+                {
+                    "Data": "1080",
+                    "Display": "Faeroese"
+                },
+                {
+                    "Data": "1035",
+                    "Display": "Finnish"
+                },
+                {
+                    "Data": "2060",
+                    "Display": "French (Belgium)"
+                },
+                {
+                    "Data": "3084",
+                    "Display": "French (Canada)"
+                },
+                {
+                    "Data": "1036",
+                    "Display": "French (France)"
+                },
+                {
+                    "Data": "5132",
+                    "Display": "French (Luxembourg)"
+                },
+                {
+                    "Data": "6156",
+                    "Display": "French (Monaco)"
+                },
+                {
+                    "Data": "4108",
+                    "Display": "French (Switzerland)"
+                },
+                {
+                    "Data": "3079",
+                    "Display": "German (Austria)"
+                },
+                {
+                    "Data": "1031",
+                    "Display": "German (Germany)"
+                },
+                {
+                    "Data": "5127",
+                    "Display": "German (Liechtenstein)"
+                },
+                {
+                    "Data": "4103",
+                    "Display": "German (Luxembourg)"
+                },
+                {
+                    "Data": "2055",
+                    "Display": "German (Switzerland)"
+                },
+                {
+                    "Data": "1032",
+                    "Display": "Greek"
+                },
+                {
+                    "Data": "1039",
+                    "Display": "Icelandic"
+                },
+                {
+                    "Data": "1057",
+                    "Display": "Indonesian"
+                },
+                {
+                    "Data": "1040",
+                    "Display": "Italian (Italy)"
+                },
+                {
+                    "Data": "2064",
+                    "Display": "Italian (Switzerland)"
+                },
+                {
+                    "Data": "2110",
+                    "Display": "Malay (Brunei Darussalam)"
+                },
+                {
+                    "Data": "1086",
+                    "Display": "Malay (Malaysia)"
+                },
+                {
+                    "Data": "1044",
+                    "Display": "Norwegian (Bokmal)"
+                },
+                {
+                    "Data": "2068",
+                    "Display": "Norwegian (Nynorsk)"
+                },
+                {
+                    "Data": "1046",
+                    "Display": "Portuguese (Brazil)"
+                },
+                {
+                    "Data": "2070",
+                    "Display": "Portuguese (Portugal)"
+                },
+                {
+                    "Data": "1049",
+                    "Display": "Russian"
+                },
+                {
+                    "Data": "11274",
+                    "Display": "Spanish (Argentina)"
+                },
+                {
+                    "Data": "16394",
+                    "Display": "Spanish (Bolivia)"
+                },
+                {
+                    "Data": "13322",
+                    "Display": "Spanish (Chile)"
+                },
+                {
+                    "Data": "9226",
+                    "Display": "Spanish (Colombia)"
+                },
+                {
+                    "Data": "5130",
+                    "Display": "Spanish (Costa Rica)"
+                },
+                {
+                    "Data": "7178",
+                    "Display": "Spanish (Dominican Republic)"
+                },
+                {
+                    "Data": "12298",
+                    "Display": "Spanish (Ecuador)"
+                },
+                {
+                    "Data": "17418",
+                    "Display": "Spanish (El Salvador)"
+                },
+                {
+                    "Data": "4106",
+                    "Display": "Spanish (Guatemala)"
+                },
+                {
+                    "Data": "18442",
+                    "Display": "Spanish (Honduras)"
+                },
+                {
+                    "Data": "2058",
+                    "Display": "Spanish (Mexico)"
+                },
+                {
+                    "Data": "19466",
+                    "Display": "Spanish (Nicaragua)"
+                },
+                {
+                    "Data": "6154",
+                    "Display": "Spanish (Panama)"
+                },
+                {
+                    "Data": "15370",
+                    "Display": "Spanish (Paraguay)"
+                },
+                {
+                    "Data": "10250",
+                    "Display": "Spanish (Peru)"
+                },
+                {
+                    "Data": "20490",
+                    "Display": "Spanish (Puerto Rico)"
+                },
+                {
+                    "Data": "3082",
+                    "Display": "Spanish (Spain)"
+                },
+                {
+                    "Data": "14346",
+                    "Display": "Spanish (Uruguay)"
+                },
+                {
+                    "Data": "8202",
+                    "Display": "Spanish (Venezuela)"
+                },
+                {
+                    "Data": "1089",
+                    "Display": "Swahili"
+                },
+                {
+                    "Data": "1053",
+                    "Display": "Swedish"
+                },
+                {
+                    "Data": "2077",
+                    "Display": "Swedish (Finland)"
+                }
+            ],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "LTCapitalGainBudget",
+            "FieldID": -202737,
+            "Caption": "Long-Term Capital Gains Budget",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7489,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "PositiveFloat",
+            "UIType": "TextBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "MaxCapitalGain",
+            "FieldID": -202739,
+            "Caption": "Max Capital Gain",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7489,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "None",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "MaintainCalcData",
+            "FieldID": -202109,
+            "Caption": "Maintain Calculated Data",
+            "DefaultValue": "1",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "BooleanWithBlank",
+            "UIType": "CheckBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "IsIncomplete",
+            "FieldID": -202040,
+            "Caption": "Incomplete",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": true,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Boolean",
+            "UIType": "CheckBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [],
+            "Description": null
+        },
+        {
+            "Name": "InvestmentGoal",
+            "FieldID": -202010,
+            "Caption": "Investment Goal",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7034,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "String",
+            "UIType": "List",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [
+                {
+                    "Data": "",
+                    "Display": ""
+                },
+                {
+                    "Data": "100% Equity",
+                    "Display": "100% Equity"
+                },
+                {
+                    "Data": "100% Fixed",
+                    "Display": "100% Fixed"
+                },
+                {
+                    "Data": "50% Equity/50% Fixed",
+                    "Display": "50% Equity/50% Fixed"
+                }
+            ],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "72",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "LastHoldingsUpdate",
+            "FieldID": -202722,
+            "Caption": "Last Holdings Update",
+            "DefaultValue": "",
+            "ReadOnly": true,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": 0,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Date",
+            "UIType": "DateAndTime",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MinValue",
+                    "Value": "01021753",
+                    "SpecialErrorMessage": null
+                },
+                {
+                    "Type": "MaxValue",
+                    "Value": "12319999",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        },
+        {
+            "Name": "IsPositionOnly",
+            "FieldID": -202081,
+            "Caption": "Position Only",
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "Hidden": false,
+            "Required": false,
+            "FieldCategoryContentID": -7037,
+            "FieldSequence": 0,
+            "UISequence": 32767,
+            "BasicType": "Boolean",
+            "UIType": "CheckBox",
+            "PrimaryKey": false,
+            "LinkTarget": "",
+            "LinkFields": [
+                "PortfolioID"
+            ],
+            "ListValues": [],
+            "Validations": [
+                {
+                    "Type": "MaxLength",
+                    "Value": "1",
+                    "SpecialErrorMessage": null
+                }
+            ],
+            "Description": null
+        }
+    ]
+}
